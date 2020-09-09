@@ -1,0 +1,29 @@
+
+<nav *ngIf="navbartoggle" class="navbar">
+    <a routerLink="/projects">
+        <div class="navprop">
+            <img class="pic" src="/assets/book.svg">
+            <div class="description"><strong>projects</strong></div>
+        </div>
+    </a>
+    <a routerLink="/new">
+        <div class="navprop">
+            <img class="pic" src="/assets/plus.svg">
+            <div class="description"><strong>add</strong></div>
+        </div>
+    </a>
+    <a routerLink="/account">
+        <div class="navprop">
+            <img class="pic" src="/assets/user.svg">
+            <div class="description"><strong>my account</strong></div>
+        </div>
+    </a>
+    <a routerLink="/enter">
+        <div class="navprop">
+            <img class="pic" src="/assets/login.svg">
+            <div class="description"><strong>login/switch account</strong></div>
+        </div>
+    </a>
+</nav>
+<router-outlet></router-outlet>
+<img (click)="toggleNav()" src="/assets/navpreview.svg" class="navtoggle" />

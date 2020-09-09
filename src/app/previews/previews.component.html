@@ -1,0 +1,30 @@
+<!-- <a *ngFor="let item of items">{{items.payload.doc.data().Categories}}</a> -->
+<!-- <a>{{items.payload.doc.Rd.Ze.proto.mapValue.fields.Repository.stringValue}}</a> -->
+<!-- <h1>Creator: {{items.Creator}}</h1>
+<p *ngFor="let categories of items.Categories">{{categories}}</p>-->
+
+<!-- <button (click)="uploadData()">upload data</button> -->
+
+<!-- <div *ngFor="let project of projects" class='display'>
+    <a><h1 class='displaytitle'><strong>{{project.Project_Title}}</strong></h1></a>
+    <div class='descriptionDiv'><strong >{{project.Description}}</strong></div>
+    <br />
+    <br />
+    
+    <a class='creatorName'><strong>{{project.Creator}}</strong></a>
+    <br />
+    <div class='tagDiv'><p *ngFor="let category of project.Categories" class='tags'><strong>{{category}}</strong></p></div>
+</div> -->
+
+<div *ngFor="let item of items" class='display'>
+    <a><h1 class='displaytitle'><strong>{{item.Project_Title}}</strong></h1></a>
+    <div class='descriptionDiv'><strong >{{item.Description}}</strong></div>
+    <br />
+    <br />
+    
+    <a class='creatorName'><strong>{{item.Creator}}</strong></a>
+    <br />
+    <div class='tagDiv'><p *ngFor="let category of item.Categories" class='tags'><strong>{{category}}</strong></p></div>
+</div>
+
+<button (click)="revealItems()">revealItems</button>

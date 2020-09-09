@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "codentake-angular"
+    },
+    "getData": {
+      "projectType": "library",
+      "root": "projects/get-data",
+      "sourceRoot": "projects/get-data/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/get-data/tsconfig.lib.json",
+            "project": "projects/get-data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/get-data/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/get-data/src/test.ts",
+            "tsConfig": "projects/get-data/tsconfig.spec.json",
+            "karmaConfig": "projects/get-data/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/get-data/tsconfig.lib.json",
+              "projects/get-data/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "codentake-angular",
+  "cli": {
+    "analytics": "bed2613d-7c1f-4674-8c06-6d9ebc65a81e"
+  }
 }

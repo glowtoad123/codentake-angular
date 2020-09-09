@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDEYXAgLTtU15zxWUOSy8s2P2ecmj5ofLg',
+    authDomain: 'https://console.firebase.google.com/project/codentake-angular/firestore/',
+    databaseURL: 'https://codentake-angular.firebaseio.com',
+    projectId: 'codentake-angular',
+    storageBucket: '',
+    messagingSenderId: ''
+  }
 };
 
 /*
