@@ -1,22 +1,23 @@
 <div><form id='npform' >
-    <input type="text" class="newProjectItem" name="Project_Title" placeholder=" Project Title" id='Project_Title'>
-    <textarea class="newProjectItem" name="Description" placeholder=" Description" id='Description'></textarea>
-    <input class="newProjectItem" name="Repository" placeholder=" Repository" id='Repository'>
+    <input (click)="readTitle()" [(ngModel)]="title" type="text" class="newProjectItem" name="Project_Title" placeholder=" Project Title" id='Project_Title'>
+    <textarea value={{Description}} [(ngModel)]="Description" class="newProjectItem" name="Description" placeholder=" Description" id='Description'></textarea>
+    <input type="text" value={{Repository}} [(ngModel)]="Repository" class="newProjectItem" name="Repository" placeholder=" Repository" id='Repository'>
     <div>
-        <input type="text" class="newProjectItem" name="Categories" placeholder="Categories" id='Categories'>
-        <button id='addCategory' type="submit">Add Category</button>
-        <div class='tagsDiv'><p class='tags'><strong>current</strong></p></div>
+        <input (click)="readCategory()" [(ngModel)]="category" type="text" class="newProjectItem" name="Categories" placeholder="Categories" id='Categories'>
+        <button (click)="addCategory()" id='addCategory' type="submit">Add Category</button>
+        <div class='tagsDiv'><p *ngFor="let each of Categories" class='tags'><strong (click)="deleteCategory(each)">{{each}}</strong></p></div>
     </div>
     <br />
     <div>
-        <input type="text" class="newProjectItem" name="Link" placeholder="Link" id='Repository'>
-        <button id='addCategory' type="submit">Add Link</button>
-        <div class='tagsDiv'><p class='tags'><strong>current</strong></p></div>
+        <input [(ngModel)]="link" type="text" class="newProjectItem" name="Link" placeholder="Link" id='Repository'>
+        <button (click)="addLink()" id='addCategory' type="submit">Add Link</button>
+        <div class='tagsDiv'><p *ngFor="let each of Links" class='tags'><strong (click)="deleteLink(each)">{{each}}</strong></p></div>
     </div>
     <br />
-    <input type="text" class="newProjectItem" name="Roadmap" placeholder="Roadmap" id='Categories'>
-        <button id='addCategory' type="submit">Add Goal</button>
-        <div class='tagsDiv'><p  class='tags'><strong>current</strong></p></div>
+    <input [(ngModel)]="goal" type="text" class="newProjectItem" name="Roadmap" placeholder="Roadmap" id='Categories'>
+        <button (click)="addGoal()" id='addCategory' type="submit">Add Goal</button>
+        <div class='tagsDiv'><p *ngFor="let each of Roadmap"  class='tags'><strong (click)="deleteGoal(each)">{{each}}</strong></p></div>
     
-    <a ><button  id='submit' type="submit">Save</button></a>
+    <a (click)="saveData()" routerLink="/projects" ><button  id='submit' type="submit">Save</button></a>
 </form></div>
+<router-outlet></router-outlet>

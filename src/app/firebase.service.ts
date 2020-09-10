@@ -19,6 +19,7 @@ export class FirebaseService {
         Categories: project.Categories,
         Creator: project.Creator,
         Description: project.Description,
+        Repository: project.Repository,
         Links: project.Links,
         Project_Title: project.Project_Title,
         Roadmap: project.Roadmap,

@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() navbartoggle: boolean = true
+  @Output() navbartoggle: boolean = false
 
   toggleNav(): void {
     if(this.navbartoggle){
