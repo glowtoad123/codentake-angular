@@ -12,10 +12,14 @@ export class FirebaseService {
     return this.db.collection('Projects').valueChanges()
   }
 
+  getId(){
+    return this.db.collection("Projects").snapshotChanges()
+  }
+
   putData(project){
-    const initialPut = this.db.collection('Projects').doc(project.Project_Title)
+    const initialPut = this.db.collection('Projects')
     return (
-      initialPut.set({
+      initialPut.add(({
         Categories: project.Categories,
         Creator: project.Creator,
         Description: project.Description,
@@ -25,7 +29,7 @@ export class FirebaseService {
         Roadmap: project.Roadmap,
         Update: [],
         inquisitors: project.inquisitors
-      })
+      }))
     )
   }
 

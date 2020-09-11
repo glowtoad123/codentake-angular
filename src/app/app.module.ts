@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { NewComponent } from './new/new.component';
 import { EnterComponent } from './enter/enter.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,21 @@ import { EnterComponent } from './enter/enter.component';
     NavbarComponent,
     PreviewsComponent,
     NewComponent,
-    EnterComponent
+    EnterComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyDEYXAgLTtU15zxWUOSy8s2P2ecmj5ofLg',
+      authDomain: 'https://console.firebase.google.com/project/codentake-angular/firestore/',
+      databaseURL: 'https://codentake-angular.firebaseio.com',
+      projectId: 'codentake-angular',
+      storageBucket: '',
+      messagingSenderId: ''
+    }),
+    /* AngularFireModule.initializeApp(environment.firebase), */
     AngularFirestoreModule,
     HttpClientModule,
     AppRoutingModule,

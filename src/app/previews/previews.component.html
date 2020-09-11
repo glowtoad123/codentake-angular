@@ -15,9 +15,10 @@
     <br />
     <div class='tagDiv'><p *ngFor="let category of project.Categories" class='tags'><strong>{{category}}</strong></p></div>
 </div> -->
-
+<label id="directions"><strong>Welcome to Codentake-angular, double click/tap a title to see that projects's full information</strong></label>
+<br>
 <div *ngFor="let item of items" class='display'>
-    <a><h1 class='displaytitle'><strong>{{item.Project_Title}}</strong></h1></a>
+    <a routerLink="/project/{{projectId}}" (click)="setId(item)"><h1 class='displaytitle'><strong>{{item.Project_Title}}</strong></h1></a>
     <div class='descriptionDiv'><strong >{{item.Description}}</strong></div>
     <br />
     <br />
@@ -27,4 +28,4 @@
     <div class='tagDiv'><p *ngFor="let category of item.Categories" class='tags'><strong>{{category}}</strong></p></div>
 </div>
 
-<button (click)="revealItems()">revealItems</button>
+<!-- <button (click)="revealItems()">revealItems</button> -->
